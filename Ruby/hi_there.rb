@@ -6,6 +6,7 @@
 #
 # Please provide the command line to run the program (e.g. "ruby hello.rb").
 
+# To run this program, execute "ruby hi_there.rb Evan Louie"
 
 require "set"
 module SapCodeTest
