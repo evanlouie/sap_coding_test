@@ -31,6 +31,7 @@ The SAP Jam Collaboration team
 1.
   - Changed the ListView render to output `<button>` instead of `<span>`
   - Changed hook/callback/event to monitor `click button.delete` instead of `click span.delete`
+  
 2.
   - When clicking on 'Add list item', JS prompt will popup prompting for for first name.
   - Added an "Allow multiple first names" checkbox for if is necessary to allow for a first name to include multiple names (ex: Sarah Michelle Gellar).
