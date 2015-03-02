@@ -22,15 +22,18 @@ module SapCodeTest
         return "Welcome back #{name}"
       else
         @names.add(name)
-        t = Time.new
-        if t.hour >= 0 && t.hour < 12
+        t = Time.new()
+        # Morning   = 24:00/00:00 -> 11:59
+        # Afternoon = 12:00       -> 16:59
+        # Evening   = 17:00       -> 23:59
+        if (t.hour >= 0 && t.hour < 12) || t.hour == 24
           return "Good morning, #{name}"
         elsif t.hour >=12 && t.hour < 17
           return "Good Afternoon, #{name}"
         elsif t.hour >= 17 && t.hour < 24
           return "Good Evening, #{name}"
         else
-          raise "Illegal time"
+          raise "Illegal time: hours out of 0 to 24 range"
         end
       end
     end
@@ -43,7 +46,7 @@ module SapCodeTest
       greeting = Greeting.new
       puts greeting.greet(ARGV.join(" "))
       loop do
-        puts "Please input name: "
+        print "Please input name: "
         STDOUT.flush
         puts greeting.greet($stdin.gets.chomp)
       end
